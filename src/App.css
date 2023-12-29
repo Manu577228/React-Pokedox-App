@@ -1,38 +1,142 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  margin: 0;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  background-color: #3498db;
+  color: #fff;
+  padding: 15px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.left-content,
+.right-content {
+  flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+  .left-content,
+  .right-content {
+    flex-basis: calc(50% - 10px);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.left-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right, #f8d800, #fe4a49);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.right-content {
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.right-content img {
+  margin: 1.5rem;
+  height: 160px;
+  border-radius: 8px;
+}
+
+.right-content h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.abilities {
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.abilities .group {
+  background-color: #3a3a3a;
   color: white;
+  padding: 0.5rem;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-left: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.base-stat {
+  margin-top: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hp-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-group button {
+  outline: none;
+  border: none;
+  width: 100%;
+  max-width: 150px;
+  padding: 0.5rem 0;
+  margin: 1rem;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, #f8d800, #fe4a49);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-group button:hover {
+  background: linear-gradient(to right, #fe4a49, #f8d800);
 }
